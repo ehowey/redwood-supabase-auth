@@ -1,12 +1,31 @@
 import { useState } from 'react'
 import { useAuth } from '@redwoodjs/auth'
-import { useUser } from 'src/lib/userContext'
 
 const HomePage = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const { handleLogin, signOut } = useUser()
-  const { currentUser } = useAuth()
+
+  const { logIn, signUp, logOut, currentUser } = useAuth()
+
+  const x = useAuth()
+
+  console.log(x)
+
+  const handleLogin = async (type, email, password) => {
+    try {
+      type === 'LOGIN'
+        ? await logIn({ email, password })
+        : await signUp({ email, password })
+    } catch (error) {
+      console.log('error', error)
+      alert(error.error_description || error)
+    }
+  }
+
+  const signOut = async () => {
+    logOut()
+    navigate(routes.home())
+  }
 
   return (
     <>
