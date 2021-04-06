@@ -1,9 +1,13 @@
 import { useAuth } from '@redwoodjs/auth'
-import { useUser } from 'src/lib/userContext'
+import { navigate, routes } from '@redwoodjs/router'
 
-const HomePage = () => {
-  const { currentUser } = useAuth()
-  const { signOut } = useUser()
+const ProfilePage = () => {
+  const { currentUser, logOut } = useAuth()
+
+  const signOut = async () => {
+    logOut()
+    navigate(routes.home())
+  }
 
   return (
     <>
@@ -21,4 +25,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage
+export default ProfilePage

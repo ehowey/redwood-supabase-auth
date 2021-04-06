@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useAuth } from '@redwoodjs/auth'
+import { navigate, routes } from '@redwoodjs/router'
 
 const HomePage = () => {
   const [email, setEmail] = useState('')
