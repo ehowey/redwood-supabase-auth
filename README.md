@@ -1,19 +1,15 @@
-# Redwood Tutorial App
+# Redwood Supabase Auth
 
-This repo represents the final state of the app created during the [Redwood Tutorial](https://redwoodjs.com/tutorial).
-It is meant to be a starting point for those working on the [Tutorial Part 2](https://redwoodjs.com/tutorial2).
+This repo represents a "completed" full tutorial (both parts 1 and part 2) BUT we have substituted [Supabase](https://supabase.io/) Auth for Netlify Auth.
 
-This repo contains much more styling than the one we built together in the tutorial, but is functionally identical.
+You can read more about [Supabase Auth in the docs](https://redwoodjs.com/docs/authentication#supabase).
 
+To get the most out of this demo you should probably complete the full tutorial yourself first and then come back here.
+
+This comes with one significant compromise, it is not easy (at least right now) to setup roles for a Supabase Auth integration so once logged in users effectively have all roles, moderator and admin.
 ## Setup
 
-The [tutorial itself](https://redwoodjs.com/tutorial2/prerequisites) contains instructions for getting this repo up and running, but here is a summary of the commands:
+1. Clone and install this repo
+1. Create a new Supabase account and database
+1. Replace the environment variables for SUPABASE_URL, SUPABASE_KEY, and SUPABASE_JWT_SECRET
 
-```bash
-git clone https://github.com/redwoodjs/redwood-tutorial
-cd redwood-tutorial
-yarn install
-yarn rw prisma migrate dev
-yarn rw prisma db seed
-yarn rw dev
-```
