@@ -18,7 +18,6 @@ const Routes = () => {
         <Route path="/blog-post/{id:Int}" page={BlogPostPage} name="blogPost" />
         <Route path="/about" page={AboutPage} name="about" />
         <Route path="/" page={HomePage} name="home" />
-        <Route path="/auth" page={AuthPage} name="auth" />
       </Set>
       {/* <Private unauthenticated="home" role="admin"></Private> */}
       <Private unauthenticated="home"> {/*eslint-disable-line*/}
