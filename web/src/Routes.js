@@ -7,17 +7,25 @@
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
-import { Router, Route, Set, Private } from '@redwoodjs/router'
-import MainLayout from 'src/layouts/MainLayout'
+import { Router, Route, Private, Set } from '@redwoodjs/router'
+import BlogLayout from 'src/layouts/BlogLayout'
 
 const Routes = () => {
   return (
     <Router>
-      <Set wrap={MainLayout}>
+      <Set wrap={BlogLayout}>
+        <Route path="/contact" page={ContactPage} name="contact" />
+        <Route path="/blog-post/{id:Int}" page={BlogPostPage} name="blogPost" />
+        <Route path="/about" page={AboutPage} name="about" />
         <Route path="/" page={HomePage} name="home" />
+        <Route path="/auth" page={AuthPage} name="auth" />
       </Set>
-      <Private unauthenticated="home">
-        <Route path="/profile" page={ProfilePage} name="profile" />
+      {/* <Private unauthenticated="home" role="admin"></Private> */}
+      <Private unauthenticated="home"> {/*eslint-disable-line*/}
+        <Route path="/admin/posts/new" page={NewPostPage} name="newPost" />
+        <Route path="/admin/posts/{id:Int}/edit" page={EditPostPage} name="editPost" />
+        <Route path="/admin/posts/{id:Int}" page={PostPage} name="post" />
+        <Route path="/admin/posts" page={PostsPage} name="posts" />
       </Private>
       <Route notfound page={NotFoundPage} />
     </Router>

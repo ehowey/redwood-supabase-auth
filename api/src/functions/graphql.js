@@ -5,10 +5,10 @@ import {
 } from '@redwoodjs/api'
 
 import schemas from 'src/graphql/**/*.{js,ts}'
-import { db } from 'src/lib/db'
 import services from 'src/services/**/*.{js,ts}'
 
 import { getCurrentUser } from 'src/lib/auth'
+import { db } from 'src/lib/db'
 
 export const handler = createGraphQLHandler({
   getCurrentUser,
@@ -16,7 +16,6 @@ export const handler = createGraphQLHandler({
     schemas,
     services: makeServices({ services }),
   }),
-
   onException: () => {
     // Disconnect from your database with an unhandled exception.
     db.$disconnect()

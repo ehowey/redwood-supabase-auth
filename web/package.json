@@ -13,13 +13,19 @@
     ]
   },
   "dependencies": {
-    "@redwoodjs/auth": "^0.28.4",
-    "@redwoodjs/forms": "^0.28.4",
-    "@redwoodjs/router": "^0.28.4",
-    "@redwoodjs/web": "^0.28.4",
-    "@supabase/supabase-js": "^1.7.7",
+    "@redwoodjs/auth": "^0.29.0",
+    "@redwoodjs/forms": "^0.29.0",
+    "@redwoodjs/router": "^0.29.0",
+    "@redwoodjs/web": "^0.29.0",
+    "@supabase/supabase-js": "^1.9.0",
+    "netlify-identity-widget": "^1.9.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "9.8.6",
+    "postcss-loader": "4.0.2",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   }
 }

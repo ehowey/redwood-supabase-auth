@@ -1,3 +1,5 @@
+// api/db/schema.prisma
+
 datasource DS {
   provider = "sqlite"
   url      = env("DATABASE_URL")
@@ -8,11 +10,27 @@ generator client {
   binaryTargets = "native"
 }
 
-// Define your own datamodels here and run `yarn redwood prisma migrate dev`
-// to create migrations for them and apply to your dev DB.
-// TODO: Please remove the following example:
-model UserExample {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+model Post {
+  id        Int      @id @default(autoincrement())
+  title     String
+  body      String
+  comments  Comment[]
+  createdAt DateTime @default(now())
+}
+
+model Contact {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  message   String
+  createdAt DateTime @default(now())
+}
+
+model Comment {
+  id        Int      @id @default(autoincrement())
+  name      String
+  body      String
+  post      Post     @relation(fields: [postId], references: [id])
+  postId    Int
+  createdAt DateTime @default(now())
 }

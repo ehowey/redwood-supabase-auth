@@ -1,11 +1,11 @@
 import { render } from '@redwoodjs/testing'
 
-import ProfilePage from './ProfilePage'
+import LoginModal from './LoginModal'
 
-describe('ProfilePage', () => {
+describe('LoginModal', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<ProfilePage />)
+      render(<LoginModal />)
     }).not.toThrow()
   })
 })

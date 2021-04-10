@@ -1,11 +1,11 @@
 import { render } from '@redwoodjs/testing'
 
-import MainLayout from './MainLayout'
+import SignupForm from './SignupForm'
 
-describe('MainLayout', () => {
+describe('SignupForm', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<MainLayout />)
+      render(<SignupForm />)
     }).not.toThrow()
   })
 })

@@ -1,0 +1,8 @@
+db.comment.create({ data: { name: 'Peter', body: 'I also like leaving comments', postId: 1 } })
+{
+  id: 3,
+  name: 'Peter',
+  body: 'I also like leaving comments',
+  postId: 2,
+  createdAt: 2021-01-01
+}
